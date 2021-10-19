@@ -6,7 +6,8 @@ This project consists of code for audio recording and playback. The concept is u
 3. SPI reader micro memory SD TF card memory card shield module
 4. Arduino Nano or equivalent 
 5. Motorised Potentiometer 
-6. A LiPo battery if portability is desired. 
+6. A LiPo battery if portability is desired
+7. 1 Watt speaker or any off the shelf speaker would work.
 
 
 Then they are connected as per the following (click on image to show in full size):
