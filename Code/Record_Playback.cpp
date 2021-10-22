@@ -16,23 +16,35 @@ Steps:
 #include <SPI.h>
 #include <TMRpcm.h>
 #define SD_ChipSelectPin 10
+
 TMRpcm audio;
 int audiofile = 0;
 unsigned long i = 0;
 bool recmode = 0;
+int State = 4;
+int LastState = 5; //Variables for the knob
+int PotPin = 2; // Potentiometer Variable
+
 
 void setup() {
+  pinMode (State, INPUT);
+  pinMode (LastState, INPUT);
   pinMode(A0, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(2, INPUT_PULLUP);
   attachInterrupt(0, button, LOW);
   SD.begin(SD_ChipSelectPin);
   audio.CSPin = SD_ChipSelectPin;
-
+  
 }
+
+aLastState = digitalRead(4); //Read the Intial State of the activity 
 
 void loop() {
-}
+aState = digitalRead(4); //Read current Activity 
+ if (aState != aLastState){  //To make sure the knob is turned clock-wise
+    analogRead(PotPin); //Read the weight of the Activity 
+}                       // The values are not stored at the moment
 
 void button() {
   while (i < 300000) {
